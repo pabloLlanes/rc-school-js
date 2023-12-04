@@ -17,7 +17,7 @@ let numero2 = 12;
 
 // Boolean
 let comprar = true;
-let vender = false;
+const vender = false;
 
 // Null
 let deposito = null;
