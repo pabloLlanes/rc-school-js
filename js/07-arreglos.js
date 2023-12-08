@@ -1,69 +1,50 @@
 // Crear un array inicial
-//let frutas = ['manzana', 'pera', 'uva', 'kiwi', 'piña'];
+let frutas = ['manzana', 'pera', 'uva', 'kiwi', 'piña'];
 
 // Agregar elementos al final del array
-// frutas.push('naranja', 'sandía');
-// console.log(frutas); // ['manzana', 'pera', 'uva', 'kiwi', 'piña', 'naranja', 'sandía']
+frutas.push('naranja', 'sandía');
+// console.log(frutas); 
 
 // Eliminar el último elemento del array
-//var ultimaFruta = frutas.pop();
+let ultimaFruta = frutas.pop();
 //console.log(ultimaFruta); // 'sandía'
-//console.log(frutas); // ['manzana', 'pera', 'uva', 'kiwi', 'piña', 'naranja']
 
 // Eliminar el primer elemento del array
-//var primeraFruta = frutas.shift();
-//console.log(primeraFruta); // 'manzana'
-//console.log(frutas); // ['pera', 'uva', 'kiwi', 'piña', 'naranja']
+let primeraFruta = frutas.shift();
 
 // Agregar elementos al inicio del array
-// frutas.unshift('melón', 'ciruela');
-// console.log(frutas); // ['melón', 'ciruela', 'pera', 'uva', 'kiwi', 'piña', 'naranja']
-
-//let frutas = ['manzana', 'pera', 'uva', 'kiwi', 'piña'];
-
+frutas.unshift('melón', 'ciruela');
 
 // Obtener una porción del array
-//var porcion = frutas.slice(2, 5);
-//console.log(porcion); // ['pera', 'uva', 'kiwi']
-
-
+let porcion = frutas.slice(2, 5);
 
 // Concatenar arrays
-//let otrasFrutas = ['durazno', 'mango'];
-//let todasLasFrutas = frutas.concat(otrasFrutas);
-//console.log(todasLasFrutas); // ['melón', 'ciruela', 'pera', 'uva', 'kiwi', 'piña', 'naranja', 'durazno', 'mango']
+let otrasFrutas = ['durazno', 'mango'];
+let todasLasFrutas = frutas.concat(otrasFrutas);
+console.log(todasLasFrutas);
 
 // Encontrar el índice de un elemento en el array
-//let indiceUva = frutas.indexOf('uvaItaliano');
-//console.log("Índice de 'uva':", indiceUva); // 3
+let indiceUva = frutas.indexOf('uva');
 
-// Verificar si un elemento existe en el array
-//let existePera = frutas.includes('remolacha');
-//console.log("¿Existe 'remolacha'?:", existePera); // true
+// si el elemento no existe en el array se guarda un -1
+let indiceNoExiste = frutas.indexOf('sdka;ldka');
+
+// Verificar si un elemento existe en el array devolviendo true o false
+let existePera = frutas.includes('remolacha');
+
 
 // Invertir el orden de los elementos en el array
-/* frutas.reverse();
+frutas.reverse();
 
+let otroArreglo = ["angel", "clown", "drum", "mandarin", "sturgeon"];
+let removed = myFish.splice(3, 1);
 
-console.log(frutas); */
-var myFish = ["angel", "clown", "drum", "mandarin", "sturgeon"];
-var removed = myFish.splice(3, 1);
-
-// removed is ["mandarin"]
-// myFish is ["angel", "clown", "drum", "sturgeon"]
-
-
-let frutas = ['manzana', 'pera', 'uva', 'kiwi', 'piña', 'ajo'];
 // Eliminar elementos de una posición específica
-//var elementosEliminados = frutas.splice(2, 3); / / Elimina desde la posición 2, tres elementos
-
-/* console.log(elementosEliminados);
-console.log(frutas); */
-
+let elementosEliminados = frutas.splice(2, 3); // Elimina desde la posición 2, tres elementos
 
 // Unir todos los elementos del array en una cadena
-var cadenaDeFrutas = frutas.join(', ');
-//console.log(cadenaDeFrutas); // 'naranja-piña-ciruela-melón'
+let cadenaDeFrutas = frutas.join(', ');
+console.log(cadenaDeFrutas); // 'naranja-piña-ciruela-melón'
 
 const equipos = [
     {
@@ -174,15 +155,6 @@ console.log(buscarMayorGanador(equipos))
 // Encontrar el equipo con más copas
 
 
-
-
-
-
-
-
-
-
-
 // de un array de Nros enteros encontrar el mayor
 var elementos = [1, 2, 3, 4, 2, 5, 6, 1];
 var elementosRepetidos = [];
@@ -199,3 +171,25 @@ for (var i = 0; i < elementos.length; i++) {
 }
 
 //console.log("Elementos Repetidos:", elementosRepetidos);
+
+//arreglos de 2 dimensiones
+
+const matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+const matrizNombres = [
+    ['Juan', 'María', 'Pedro'],
+    ['Laura', 'Carlos', 'Ana'],
+    ['Luis', 'Lucía', 'Sofía']
+];
+
+const filas = matriz.length;
+const columnas = matriz[0].length;
+for (let i = 0; i < filas; i++) {
+    for (let j = 0; j < columnas; j++) {
+        const elemento = matriz[i][j];
+        console.log(`Elemento en (${i}, ${j}): ${elemento}`);
+    }
+}

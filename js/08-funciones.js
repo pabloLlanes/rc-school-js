@@ -6,11 +6,11 @@ function saludar(nombre) {
     console.log(`¡Hola ${nombre}!`);
 }
 
-// Llamada a la función
+// Llamada o invocación a la función
 saludar("Juan");
 
 // Función anónima asignada a una variable
-var sumar = function (a, b) {
+let sumar = function (a, b) {
     // Devuelve la suma de dos números
     return a + b;
 };
@@ -34,11 +34,14 @@ operacion(function (a, b) {
 }, 4, 6);
 
 // Función flecha (Arrow function)
-var multiplicar = (a, b) => a * b;
+var multiplicar = function (a, b) { return a * b };
+function multiplicar(a, b) {
+    return a * b
+}
+
 // Llamada a la función flecha y muestra el resultado
 var resultadoMultiplicacion = multiplicar(2, 3);
 console.log("La multiplicación es: " + resultadoMultiplicacion);
-
 
 // Función con nombre
 function cuadrado(x) {
@@ -54,40 +57,17 @@ var cuadradoAnonimo = function (x) {
 console.log(cuadrado(5));           // 25
 console.log(cuadradoAnonimo(5));    // 25
 
-/* function areaCuadrado(lado) {
+function areaCuadrado(lado) {
     const calculoArea = lado * lado;
     return calculoArea;
 }
 
 function saludarAlumno(apellido, edad) {
-
     if (edad < 18) {
-        return 'es menor de edad, no puede usar esa fn'
+        return `Hola jovencito ${apellido}`
     }
     return `todo correcto ${apellido}`
 }
 
-console.log(saludarAlumno('Llanes', 17)); */
+console.log(saludarAlumno('Llanes', 18));
 
-const nota = 1;
-
-switch (nota) {
-    case 1:
-        console.log('Muy deficiente');
-        break;
-    case 2:
-        console.log('Muy deficiente');
-
-        break;
-    case 3:
-        console.log('Suficiente');
-
-        break;
-    case 4:
-        console.log('Bien');
-
-        break;
-
-    default:
-        break;
-}

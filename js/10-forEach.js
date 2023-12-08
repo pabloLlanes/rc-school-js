@@ -38,6 +38,8 @@ frutas.forEach(function (fruta, indice, array) {
 console.log(frutas); // Resultado: ['MANZANA', 'PLÁTANO', 'UVA']
 
 // Notas importantes
+// - El método forEach es útil cuando deseas realizar una operación específica en cada elemento de un array y 
+//   no necesitas rastrear manualmente el índice actual.
 // - forEach no crea un nuevo array, sino que modifica el array existente o realiza acciones en función de los elementos.
 // - No es posible detener un bucle forEach como se hace con break en bucles for o while.
 // - Si deseas crear un nuevo array basado en la transformación de otro, puedes considerar el uso de map.
@@ -64,3 +66,34 @@ const estudiantes = [
   { nombre: 'Juan', calificaciones: [78, 92, 80] },
   { nombre: 'María', calificaciones: [95, 89, 92] }
 ]; */
+
+
+// Equipos de la NBA
+const equiposNBA = [
+    { nombre: 'Lakers', ciudad: 'Los Angeles', conferencia: 'Oeste' },
+    { nombre: 'Bulls', ciudad: 'Chicago', conferencia: 'Este' },
+    { nombre: 'Warriors', ciudad: 'Golden State', conferencia: 'Oeste' }
+];
+
+// Función para imprimir nombres de equipos utilizando forEach
+function imprimirNombresEquipos() {
+    console.log('Equipos de la NBA (utilizando forEach):');
+    equiposNBA.forEach(function (equipo) {
+        console.log(equipo.nombre);
+    });
+}
+
+imprimirNombresEquipos();
+
+// Función para obtener un array de nombres de equipos utilizando map
+function obtenerNombresEquipos() {
+    const nombresEquipos = equiposNBA.map(function (equipo) {
+        return equipo.nombre;
+    });
+
+    console.log('\nNombres de equipos de la NBA (utilizando map):');
+    console.log(nombresEquipos);
+}
+
+obtenerNombresEquipos();
+

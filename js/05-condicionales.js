@@ -1,3 +1,47 @@
+
+//IF
+
+/* La declaración if se utiliza para ejecutar un bloque de código
+si una condición especificada es evaluada como true. */
+
+let edad = 20;
+
+if (edad >= 18) {
+    console.log("Eres mayor de edad. Puedes ingresar.");
+}
+
+//IF-ELSE 
+/* La declaración if-else permite ejecutar un bloque de código si la
+condición especificada es true y otro bloque de código si la
+condición es false. */
+
+let hora = 14;
+
+if (hora < 12) {
+    console.log("Buenos días.");
+} else {
+    console.log("Buenas tardes o noches.");
+}
+
+//IF-ELSE IF
+/* La declaración if-else if permite manejar múltiples 
+condiciones en secuencia. */
+
+let puntuacion = 75;
+
+if (puntuacion >= 90) {
+    console.log("Excelente!");
+} else if (puntuacion >= 70) {
+    console.log("Bien hecho.");
+} else {
+    console.log("Es necesario mejorar.");
+}
+
+/* Estas estructuras de control (if, if-else, if-else if) son
+fundamentales para la toma de decisiones en programas JavaScript,
+permitiendo ejecutar diferentes bloques de código en función de las
+condiciones evaluadas. */
+
 //-- Escribir un programa que muestre un prompt 
 //donde el usuario ingresa un número, luego muestra 
 //otro prompt pidiendo otro número, finalmente el programa 
@@ -81,36 +125,7 @@ console.log(resulCalculoArea02);
 console.log(resulCalculoPerimetro01);
 console.log(resulCalculoPerimetro02); */
 
-/* let estacion = "primavera";
 
-estacion = 1;
-
-let precioVenta = 100;
-
-switch (estacion) {
-    case 'primavera':
-        console.log('estamos en la primavera: ', estacion);
-        precioVenta = precioVenta + 200;
-        break;
-    case 'verano':
-        console.log('estamos en la verano: ', estacion);
-        precioVenta = precioVenta + 300;
-
-        break;
-    case 'otoño':
-        console.log('estamos en la otoño: ', estacion);
-        precioVenta = precioVenta + 100;
-
-        break;
-    case 'invierno':
-        console.log('estamos en la invierno: ', estacion);
-        precioVenta = precioVenta + 50;
-
-        break;
-    default:
-        console.log(estacion + ' no es una estacion del año');
-}
-*/
 
 //console.log(precioVenta);
 
@@ -176,40 +191,6 @@ if (ValorEntrada === 1) {
 
 //ValorEntrada = parseInt(ValorEntrada)
 
-//letValorEntrada = 3;
-
-let sueldo = 0;
-
-
-switch (parseInt(ValorEntrada)) {
-    case 1:
-        console.log('Hoy es dia Lunes')
-        sueldo = 400;
-        break;
-    case 2:
-        sueldo = 600;
-        console.log('Hoy es dia Martes')
-        break;
-    case 3:
-        console.log('Hoy es dia Mierc')
-        break;
-    case 4:
-        console.log('Hoy es dia Jueves')
-        break;
-    case 5:
-        console.log('Hoy es dia Vier')
-        break;
-    case 6:
-        console.log('Hoy es dia Sab')
-        break;
-    case 7:
-        console.log('Hoy es dia Domingo')
-        break;
-
-    default:
-        console.log('Nro. de la semana no correcto')
-        break;
-}
 
 
 

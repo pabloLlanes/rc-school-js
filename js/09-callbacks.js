@@ -1,7 +1,7 @@
 // Función que realiza una operación y llama a un callback con el resultado
 function operacion(callback) {
     // Simulamos una operación simple (en este caso, suma de dos números)
-    var resultado = 5 + 3;
+    let resultado = 5 + 3;
     // Llamamos al callback con el resultado
     callback(resultado);
 }
@@ -20,7 +20,7 @@ function realizarCalculo(x, y, operacion) {
     console.log("El resultado del cálculo es: " + resultado);
 }
 
-// Funciones que sirven como callbacks para realizar diferentes operaciones matemáticas
+// Ejemplo de funciones que sirven como callbacks para realizar diferentes operaciones matemáticas
 function suma(a, b) {
     return a + b;
 }
@@ -55,8 +55,6 @@ function mostrarMensajeConsola(mensaje) {
 saludar("Juan", mostrarMensajeConsola);
 
 
-
-
 // Juego
 
 // Definición de unidades
@@ -66,7 +64,7 @@ const ghost = { nombre: 'Ghost', vida: 25, ataque: 10 };
 const zealot = { nombre: 'Zealot', vida: 30, ataque: 8 };
 const hydralisk = { nombre: 'Hydralisk', vida: 28, ataque: 6 };
 
-// Función principal que simula un ataque
+// Función principal que simula un turno de ataque
 function batalla(unidadAtaca, unidadRecibe, tipoAtaque) {
     let resultadoAtaque = tipoAtaque(unidadAtaca, unidadRecibe);
     console.log(`Resultado: ${resultadoAtaque}`);
@@ -91,7 +89,6 @@ function ataqueAcido(unidadAtaca, unidadRecibe) {
     if (unidadRecibe.vida <= 0) {
         return `${unidadRecibe.nombre} ha sido derrotado. RIP.`;
     }
-
     return `${unidadRecibe.nombre} ha recibido un impacto de ${unidadAtaca.nombre}. Vida restante: ${unidadRecibe.vida}`;
 }
 
@@ -100,7 +97,6 @@ function curar(unidad) {
     console.log(unidad)
     const cantidadCuracion = 8;
     unidad.vida += cantidadCuracion;
-
     return `${unidad.nombre} ha sido curado. Vida restante: ${unidad.vida}`;
 }
 
@@ -108,8 +104,7 @@ function curar(unidad) {
 batalla(marine, hydralisk, ataqueRifle);
 
 // Ejemplo de ataque sin especificar unidad que recibe
-// Aquí se asume que se quiere un ataque de marine a zergling
-batalla(marine, zergling, ataqueRifle);
+batalla(zergling, marine, ataqueAcido);
 
 // Simulando un turno de curación
 batalla(marine, marine, curar);

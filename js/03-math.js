@@ -33,4 +33,4 @@ console.log("Usando toFixed " + numero1.toFixed(2));
 
 // parseFloat Convierte (parsea) un argumento de tipo cadena y
 // devuelve un número de punto flotante.
-console.log(parseFloat(numero1.toFixed(2)));
+//console.log(parseFloat(numero1.toFixed(2)));
