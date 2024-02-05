@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos con Bootstrap y JavaScript</title>
+
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <!-- Botón para abrir el modal -->
+        <button id="abrirModal2" class="btn btn-primary">Evento doble click</button>
+
+    </div>
+
+    <!-- Enlace a Bootstrap JS y Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+
+    <!-- Script personalizado -->
+    <script>
+        // Capturar el botón y el modal por sus id
+        const boton2 = document.getElementById('abrirModal2');
+
+        console.log(boton2);
+
+        const ejecutarAlerta = function () {
+            console.log('¡Doble clic detectado!');
+            alert('¡Doble clic detectado!');
+        }
+        boton2.addEventListener('keyEventInput', ejecutarAlerta);
+        // Eventos de teclado
+        document.getElementById('keyEventInput').addEventListener('keydown', function (event) {
+            console.log('Tecla presionada:', event.key);
+        });
+
+
+    </script>
+</body>
+
+</html>

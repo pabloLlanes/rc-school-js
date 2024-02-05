@@ -28,8 +28,6 @@ console.log('Inicio del intervalo');
 
 // La ejecución continuará hasta que se detenga con clearInterval o cierre la aplicación
 
-
-
 let tiempoRestante = 10;
 
 function actualizarTemporizador() {

@@ -26,13 +26,18 @@ let deposito = null;
 let caja;
 
 // Array
-let arreglo = [1, "Sanwich", true, "Cuadrados Mágicos"];
+let arreglo = [1, "Sandwich", true, "Cubos Mágicos"];
 
 // Object
 let persona = {
     nombre: "José",
     apellido: "Perez",
     edad: 23,
+};
+
+const car = {
+    year: 1995,
+    model: "Renault",
 };
 
 // Operadores
