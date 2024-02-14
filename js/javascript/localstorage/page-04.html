@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lista de Jugadores de Fútbol</title>
+</head>
+<body>
+
+<h2>Lista de Jugadores de Fútbol:</h2>
+<ul id="soccerPlayersList"></ul>
+<input type="text" id="newPlayer" placeholder="Nuevo Jugador">
+<button onclick="addPlayer()">Agregar Jugador</button>
+
+<script>
+  // Datos para la lista de jugadores de fútbol obtenidos de un array
+  var soccerPlayers = ['Lionel Messi', 'Cristiano Ronaldo', 'Neymar Jr.', 'Kylian Mbappé', 'Robert Lewandowski'];
+
+  // Función para agregar un nuevo jugador al array
+  function addPlayer() {
+    var newPlayerInput = document.getElementById('newPlayer');
+    var newPlayer = newPlayerInput.value.trim();
+
+    if (newPlayer !== '') {
+      soccerPlayers.push(newPlayer);
+      updatePlayersList();
+      newPlayerInput.value = '';
+    }
+  }
+
+  // Función para actualizar la lista de jugadores en el DOM
+  function updatePlayersList() {
+    var playersList = document.getElementById('soccerPlayersList');
+    playersList.innerHTML = '';
+
+    soccerPlayers.map(function(player) {
+      var listItem = document.createElement('li');
+      listItem.textContent = player;
+      playersList.appendChild(listItem);
+    });
+  }
+
+  // Inicializar la lista de jugadores al cargar la página
+  updatePlayersList();
+</script>
+
+</body>
+</html>

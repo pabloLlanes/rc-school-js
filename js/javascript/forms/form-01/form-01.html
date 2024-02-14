@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Clientes</title>
+</head>
+<body>
+
+<h2>Registro de Clientes</h2>
+
+<form id="formularioClientes">
+    <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" >
+    </div>
+    <div>
+        <button type="submit">Registrar</button>
+    </div>
+</form>
+<ul id="listaClientes"></ul>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const formulario = document.getElementById('formularioClientes');
+  
+      formulario.addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevenir el envío tradicional del formulario
+  
+          const nombre = document.getElementById('nombre').value.trim();
+          const email = document.getElementById('email').value.trim();
+  
+           // Llama a validarCampos desde validacion.js
+           if (!validarCampos(nombre, email)) {
+              return; // Termina la ejecución si la validación falla
+          }
+  
+          agregarCliente({ nombre, email }); // Suponiendo que esta función valida y agrega correctamente
+          formulario.reset(); // Limpiar el formulario después de la validación y el agregado exitoso
+      });
+  });
+  </script>
+<script src="./validacion.js"></script>
+<script src="./gestionClientes.js"></script>
+
+</body>
+</html>

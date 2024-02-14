@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lista de Frutas</title>
+</head>
+<body>
+
+<h2>Lista de Frutas:</h2>
+<ul id="fruitsList">
+
+  
+</ul>
+<input type="text" id="newFruit" placeholder="Nueva Fruta">
+<button onclick="addFruit()">Agregar Fruta</button>
+
+<script>
+  // Datos para la lista de frutas obtenidos de un array
+  const fruits = ['Manzana', 'Plátano',   'Fresa', 'Naranja'];
+
+  // Función para agregar una nueva fruta al array
+  function addFruit() {
+    var newFruitInput = document.getElementById('newFruit');
+    var newFruit = newFruitInput.value.trim();
+
+    if (newFruit !== '') {
+      fruits.push(newFruit);
+      updateFruitsList();
+      newFruitInput.value = '';
+    }
+  }
+
+  // Función para actualizar la lista de frutas en el DOM
+  function updateFruitsList() {
+    var fruitsList = document.getElementById('fruitsList');
+    fruitsList.innerHTML = '';
+
+    for (var i = 0; i < fruits.length; i++) {
+      var listItem = document.createElement('li');
+      listItem.textContent = fruits[i];
+      fruitsList.appendChild(listItem);
+    }
+  }
+
+  // Inicializar la lista de frutas al cargar la página
+  updateFruitsList();
+</script>
+
+</body>
+</html>

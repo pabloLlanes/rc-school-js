@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Contacto 01</title>
+</head>
+
+<body>
+    <h1>Contáctanos</h1>
+    <div class="container">
+        <h2>Validación de campo Nombre con JS</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre">
+                <div id="nombreError" class="text-danger" style="height: 20px;"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" id="email">
+            </div>
+            <button type="submit" id="botonEnviar" class="btn btn-primary" disabled>Enviar</button>
+        </form>
+    </div>
+    <!-- JavaScript -->
+    <script>
+        // "DOMContentLoaded" asegura que el script se ejecuta después de que todo el contenido de la página se ha cargado.
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtenemos los elementos del formulario y el botón por sus IDs para poder interactuar con ellos.
+            const nombreInput = document.getElementById('nombre');
+            const emailInput = document.getElementById('email');
+            const submitBtn = document.getElementById('botonEnviar');
+            const nombreError = document.getElementById('nombreError');
+
+            // 'validateForm' es una función que verifica si los datos ingresados en el formulario son válidos.
+            function validateForm() {
+                let valid = true; // Esta variable mantiene un registro de si el formulario es válido o no.
+                nombreError.textContent = ''; // Limpia mensajes de error anteriores cada vez que se valida el formulario.
+
+                const nombre = nombreInput.value.trim(); // Obtiene el valor ingresado y elimina espacios en blanco al inicio y final.
+                // Serie de condiciones para validar el campo "nombre".
+                if (nombre === '') {
+                    nombreError.textContent = 'El nombre no puede estar vacío.';
+                    valid = false; // Cambia 'valid' a false si el nombre está vacío.
+                } else if (nombre.length < 4) {
+                    nombreError.textContent = 'El nombre debe tener al menos 4 caracteres.';
+                    valid = false; // Cambia 'valid' a false si el nombre tiene menos de 4 caracteres.
+                } else if (nombre.length > 20) {
+                    nombreError.textContent = 'El nombre no debe tener más de 20 caracteres.';
+                    valid = false; // Cambia 'valid' a false si el nombre tiene más de 20 caracteres.
+                }
+
+                submitBtn.disabled = !valid; // Deshabilita o habilita el botón de enviar según si el formulario es válido o no.
+            }
+
+            // Estos eventos 'input' llaman a 'validateForm' cada vez que el usuario escribe algo,
+            // permitiendo una validación en tiempo real del formulario.
+            nombreInput.addEventListener('input', validateForm);
+            emailInput.addEventListener('input', validateForm);
+
+            // Este evento 'submit' se activa cuando el usuario intenta enviar el formulario.
+            document.getElementById('contactForm').addEventListener('submit', function (event) {
+                event.preventDefault(); // Previene el comportamiento por defecto de enviar el formulario.
+                // Aquí se puede añadir la lógica para manejar el envío del formulario, como enviar los datos a un servidor.
+                // Por ahora, solo muestra una alerta con los valores ingresados.
+                alert(`Gracias por contactarnos: ${nombreInput.value} - ${emailInput.value}`);
+            });
+
+            // Llama a 'validateForm' al cargar la página para establecer el estado inicial del botón correctamente.
+            validateForm();
+        });
+
+    </script>
+    <!-- Bootstrap template and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

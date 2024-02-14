@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lista de Autos</title>
+</head>
+<body>
+
+<h2>Lista de Autos:</h2>
+<ul id="carsList"></ul>
+<input type="text" id="newCar" placeholder="Nuevo Auto">
+<button onclick="addCar()">Agregar Auto</button>
+
+<script>
+  var cars = ['Toyota', 'Ford', 'Honda', 'Chevrolet', 'BMW'];
+
+  function addCar() {
+    var newCarInput = document.getElementById('newCar');
+    var newCar = newCarInput.value.trim();
+
+    if (newCar !== '') {
+      cars.push(newCar);
+      updateCarsList();
+      newCarInput.value = '';
+    }
+  }
+
+  // Función para actualizar la lista de autos en el DOM
+  function updateCarsList() {
+    var carsList = document.getElementById('carsList');
+    carsList.innerHTML = '';
+
+    cars.forEach(function(car) {
+      var listItem = document.createElement('li');
+      listItem.textContent = car;
+      carsList.appendChild(listItem);
+    });
+  }
+
+  // Inicializar la lista de autos al cargar la página
+  updateCarsList();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guardar Usuario en Local Storage</title>
+</head>
+<body>
+
+<form id="formularioUsuario">
+    <input type="text" id="nombreUsuario" placeholder="Ingresa nombre de usuario">
+    <button type="submit">Guardar Usuario</button>
+</form>
+<ul id="listaUsuarios"></ul>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const formulario = document.getElementById('formularioUsuario');
+    formulario.addEventListener('submit', function(e) {
+        e.preventDefault(); // Evitar recargar la página
+
+        const nombreUsuario = document.getElementById('nombreUsuario').value;
+        if (nombreUsuario) { // Verificar que el campo no esté vacío
+            guardarUsuario(nombreUsuario);
+            formulario.reset(); // Limpiar el campo de entrada después de guardar
+            actualizarListaUsuarios(); // Actualizar la lista de usuarios
+        }
+    });
+
+    actualizarListaUsuarios(); // Actualizar la lista al cargar la página
+});
+
+function guardarUsuario(nombre) {
+    // Obtener la lista actual de usuarios del localStorage
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    
+    // Añadir el nuevo usuario a la lista
+    usuarios.push(nombre);
+    
+    // Guardar la lista actualizada en localStorage
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+}
+
+function actualizarListaUsuarios() {
+    const lista = document.getElementById('listaUsuarios');
+    lista.innerHTML = ''; // Limpiar la lista actual
+
+    // Obtener la lista de usuarios de localStorage
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+    // Crear un elemento <li> para cada usuario y añadirlo a la lista
+    usuarios.forEach(function(usuario) {
+        const li = document.createElement('li');
+        li.textContent = usuario;
+        lista.appendChild(li);
+    });
+}
+
+
+
+</script>
+</body>
+</html>
